@@ -1,0 +1,123 @@
+A Database Management System (DBMS) is 
+software used to create, store, 
+manage, and retrieve data. 
+
+Student
+REG_NO   NAME   AGE 
+101	 CCC	25
+105	 DDD	39
+107 	 MMM	76
+
+create table student(regno int,
+name varchar(10),age int);
+
+desc student;
+
+
+insert into student values(101,'www',34);
+
+			DATA TYPES 
+
+
+An Entity Relationship (ER) Diagram is 
+a visual blueprint of a database. 
+
+TYPES OF ENTITY
+	STRONG ENTITY
+	WEAK ENTITY
+	ASSOCIATIVE
+	SUPERTYPE (overlap, Disjoint)
+
+TYPES OF ATTRIBUTE
+	Unique Attribute
+	Multi-Valued Attribute
+	Optional Attribute
+	Composite Attribute
+	Derived Attribute
+
+TYPES OF CARDINALITIES RELATIONSHIP
+	one to one
+	one to many
+	many to one
+	many to many
+
+
+
+
+
+
+
+Draw an ER Diagram for the bank. Make suitable 
+assumptions and use them in showing maximum and 
+minimum cardinality 
+ratios.A bank has many branches, and a large number of 
+customers. A customer can open many different 
+kinds of accounts with the bank. 
+The bank keeps track of the customer with 
+his aathar_Number, name, address, and phone number. 
+Age is a factor to check whether he is a major. 
+There are different types of loans, each identified 
+by a loan number. Customer can take out more than 
+one type of loan, and all branches can give loans. 
+Loans have a duration and interest rate.
+
+A company manufactures and sells many products 
+through different warehouses. Each product is identified 
+by a Product_ID, product name, category, 
+price, and manufacturing date. Customers 
+can purchase multiple products, and a 
+product can be purchased by many customers. 
+Every customer has a Customer_ID, name, email, 
+address, and phone number.
+Warehouses store many products, and each 
+warehouse is identified by Warehouse_ID, 
+location, and storage capacity. 
+Orders are placed by customers, 
+and each order contains one or more products. 
+Orders have order date, delivery date, and payment status. 
+The company also maintains supplier details. 
+A supplier can supply many products, and a product 
+may be supplied by multiple suppliers.
+
+	
+	
+A company has many departments and employees. 
+Each employee is identified by Employee_ID, name, 
+address, phone number, salary, and date of joining. 
+Employees work in departments, and every 
+department is identified by Department_ID, 
+department name, and location.
+A department can have many employees, 
+but an employee works in only one department. 
+Each department is managed by one manager, 
+who is also an employee. Employees can work 
+on multiple projects, and a project can involve 
+many employees. Projects are identified by 
+Project_ID, project name, budget, and duration.
+The company also keeps track of attendance 
+and payroll details. Employees receive salaries 
+through payroll records, and attendance is 
+maintained daily.
+
+
+
+
+
+A stock brokerage company manages many investors and listed companies. Each investor 
+is identified by Investor_ID, name, address, phone number, PAN number, and 
+email address. Investors can buy and sell shares of multiple companies.Each company 
+is identified by Company_ID, company name, stock symbol, market capitalization, and 
+sector type. A company can issue many shares, and many 
+investors can own shares of the same company. 
+Transactions are recorded with Transaction_ID, transaction date, transaction 
+type (buy/sell), quantity, and share price.
+The brokerage firm also maintains broker details. Each broker is identified 
+by Broker_ID, name, license number, and phone number. 
+A broker can handle many investors, while an investor is assigned to 
+one broker. The system also tracks dividend payments 
+issued 
+by companies to shareholders.
+
+
+
+

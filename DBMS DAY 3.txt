@@ -1,0 +1,113 @@
+		ALTER CONSTRAINTS
+ALTER TABLE table_name
+ADD CONSTRAINT constraint_name 
+constraint_type(column_name);
+alter table emp add email varchar(5);
+alter table emp add constraint uq unique(email)
+
+ALTER TABLE table_name
+DROP CONSTRAINT constraint_name
+alter table emp drop constraint pk; 
+
+ALTER TABLE table_name
+MODIFY column_name datatype constraint;
+alter table emp modify eid int unique;
+
+create table emp (eid int,ename varchar(5), constraint pk
+primary key(eid));
+
+insert into table emp(101,'www');
+insert into table emp(101,'ccc');
+ 
+create table emp (eid int,ename varchar(5),email 
+varchar(5) constraint uq unique);
+
+DML	- Data Manipulation Language	
+	Manipulates data in tables	
+INSERT, UPDATE, DELETE
+			INSERT 
+INSERT INTO table_name (column1, 
+column2, column3)
+VALUES (value1, value2, value3);
+		[OR]
+INSERT INTO table_name 
+VALUES(value1, value2, value3);
+
+INSERT INTO table_name
+VALUES(&value1, '&value2');
+insert into emp values(&eid,'&ename','&email');
+
+INSERT INTO table1
+SELECT * FROM table2;
+create table emp (eid int,ename varchar(5),age int);
+insert into emp values(101,'www',25);
+insert into emp values(102,'ccc',30);
+create table empl (empid int,empname varchar(5),ages int);
+insert into empl select  * from emp;
+insert into empl(empid,empname) select eid,ename from emp;
+
+
+
+
+			UPDATE 
+UPDATE table_name
+SET column_name = value
+WHERE condition;
+create table emp(eid int,ename varchar(5), age int, sal int);
+insert into emp values(101,'WWW',24,1000);
+insert into emp values(102,'sss',30,2000);
+insert into emp values(103,'zzz',40,5000);
+insert into emp values(104,'yyy',60,6000);
+insert into emp values(105,'qqq',50,9000);
+update emp set sal=sal+20;
+update emp set ename='ccc' where eid=101;
+update emp set ename='ddd',age=60 where eid=101;
+
+
+			DELETE
+DELETE FROM table_name
+WHERE condition;
+
+delete from emp where eid=101;
+
+delete from emp;
+   
+
+				DQL
+SELECT 
+OPERATORS
+> 
+<
+>=
+<=
+<> --- NOT EQUAL TO
+BETWEEN ....AND....
+IN
+IS NULL
+LIKE  --'%' --- SEQUENCE OF MORE CHARACTER
+      --'_'-----ANY SINGLE CHARACTER 	
+LOGICAL OPERATORS 
+AND
+select first_name,salary from
+employees where salary >3000 and 
+salary<5000;
+OR
+select first_name,salary from
+employees where salary >3000 or
+salary<5000;
+NOT
+select first_name,department_id from employees
+where salary not in(50,90,10); 
+
+
+Display the employees whose 
+salary is greater than 3000
+
+
+
+
+
+
+
+
+

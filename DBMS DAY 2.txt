@@ -1,0 +1,162 @@
+				KEYS
+			Types of Keys
+1. Super Key
+Any combination of one or more attributes 
+(columns) that can uniquely identify 
+every row (tuple) in a table
+Accept NULL VALUES.
+
+  
+2. Candidate Key
+Minimal set of attributes (columns) that can 
+uniquely identify each row (tuple) in a table
+
+3. Primary Key
+A primary key is a unique identifier for a specific 
+row in a database table.
+	
+
+4. Alternate Key
+An alternate key is any candidate key in a database 
+table that is capable of uniquely identifying a 
+record but was not selected as the primary key.
+
+
+5. Composite Key
+A composite key is a database key composed of two 
+or more columns that uniquely 
+identify a single row in a table
+
+6. Foreign Key
+A foreign key is a field (or group of fields) 
+in one database table that uniquely identifies 
+a row in another table. It establishes 
+a link between the two tables, 
+enforcing a rule called "referential integrity" 
+to ensure that data remains consistent and 
+cannot accidentally be deleted or orphaned.
+
+
+
+DDL - Data Definition Language
+Defines database structure
+CREATE, ALTER, DROP, TRUNCATE	
+		
+DML	- Data Manipulation Language	
+Manipulates data in tables	
+INSERT, UPDATE, DELETE
+
+DQL	- Data Query Language	
+Retrieves data	SELECT
+
+TCL	Transaction Control Language	
+Manages transactions	COMMIT, ROLLBACK, SAVEPOINT
+DCL	Data Control Language	
+
+Controls access and permissions	GRANT, REVOKE
+
+
+		CREATE TABLE 
+CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint,
+    column3 datatype constraint,
+   ....
+);
+
+			INSERT 
+INSERT INTO table_name (column1, 
+column2, column3)
+VALUES (value1, value2, value3);
+		[OR]
+INSERT INTO table_name 
+VALUES(value1, value2, value3);
+
+INT 
+FLOAT
+CHAR(5)
+VARCHAR(25) or varchar2(25)
+DECIMAL(D,S)--> DECIMAL(5,2)-->124.99
+
+CREATE TABLE EMP(EID INT, sal decimal(5,2));
+insert into emp values(101,124.99);
+
+
+
+		CONSTRAINTS 
+1. PRIMARY KEY (unique+not null)
+create table emp2(eid int primary key,
+ename varchar(5));
+insert into emp2 values(101,'www');
+insert into emp2 values(102,'yyy');
+insert into emp2 values(103,null);
+
+2. NOT NULL
+create table emp3(eid int primary key,
+ename varchar(5) not null);
+insert into emp3 values(101,'www');
+insert into emp3 values(102,'yyy');
+insert into emp3 values(103,null);
+
+3. DEFAULT
+create table emp4(eid int primary key,
+sal int default 3000);
+insert into emp4 values(101,5000);
+insert into emp4 values(102);-->Wrong
+insert into emp4 (eid) values (103);
+4. CHECK
+create table emp5(eid int primary key,
+age int check(age>=18));
+insert into emp5 values(101,65);
+insert into emp5 values(102,5);
+create table emp5(eid int primary key,
+sal int check(sal>0 AND sal<10000));
+
+5. UNIQUE
+
+create table emp6(eid int primary key,
+name varchar(5),email varchar(5) unique);
+
+insert into emp6 values(101,'www','d@yh');
+insert into emp6 values(102,'yyy','d@yh');
+6. FOREIGN KEY
+Parent records---
+deptid, dname
+create table dept(deptid int primary key,
+dname varchar(5));
+Child record ----
+sid,sname,age,deptid
+insert into dept values(101,'MECH');
+insert into dept values(102,'CIVIL');
+insert into dept values(103,'BIO');
+create table stu(sid int primary key, 
+sname varchar(5),age int,deptid int 
+foreign key(deptid) references dept(deptid));
+insert into stu values(201,'www',21,102);
+insert into stu values(202,'www',21,104);
+
+ 
+
+create table emp7(eid int primary key);	
+alter table emp7 add name varchar(5);
+alter table emp7 MODIFY COLUMN name varchar(50);	
+alter table emp7 drop column name;
+alter table emp7 rename column name to ename;
+ALTER TABLE emp7 RENAME TO emp9;
+			ALTER
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name MODIFY column_name datatype;
+ALTER TABLE table_name RENAME COLUMN old_name TO new_name;
+ALTER TABLE table_name RENAME TO new_table_name;
+
+
+			TURNCATE--->Delete all rows
+TRUNCATE TABLE TABLENAME;
+
+				DROP
+DROP TABLE TABLENAME;  --->Entire table deleted 
+
+
+
+

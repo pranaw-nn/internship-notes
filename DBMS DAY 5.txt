@@ -1,0 +1,125 @@
+			QUERY PROBLEM SOLVING
+		order by, group by, Having Clause
+1. Display average salary of employees 
+department wise where average salary is 
+greater than 7000.
+select department_id, avg(salary) from employees 
+group by(department_id)
+having avg(salary)>7000;
+
+
+
+
+2. Find departments where total salary is 
+greater than 50000 and sort by total salary 
+descending.
+select department_id, sum(salary) from employees
+group by(department_id) having sum(salary) >50000
+order by sum(salary) desc;
+
+
+
+
+
+
+
+3. Display job_id, average salary, and count of 
+employees for jobs having more than 
+3 employees.
+
+select job_id, avg(salary), count(employee_id) 
+from employees
+group by(job_id) having count(employee_id)>3;
+
+
+
+
+
+
+
+
+4. Find the total commission department-wise 
+and sort the output.
+select department_id, sum(commission_pct) as comm from employees
+group by(department_id) order by comm;
+
+
+
+
+
+
+
+
+
+
+
+
+5.Find the average salary for each job ID.
+select job_id, avg(salary) from employees 
+group by(job_id);
+
+
+
+
+
+6.Find the highest salary for each job ID.
+
+
+
+
+
+
+7. Display employee names and annual 
+salary (salary*12) sorted by annual 
+salary descending.
+select first_name, salary*12 as sal from employees
+order by sal desc;
+
+
+
+
+
+
+
+
+
+
+
+8. Find the number of employees in each 
+job and sort alphabetically by job ID.
+select job_id, count(employee_id) from employees
+group by(job_id) order by job_id;
+
+
+
+
+
+
+
+
+
+
+9. Find the number of employees hired in 
+each department.
+select departmnet_id, count(hire_date) from employees group by
+(department_id);
+
+
+
+
+
+
+
+
+
+
+
+
+10. Find department-wise average salary 
+and display only departments where 
+average salary is between 5000 and 10000.
+
+
+
+
+
